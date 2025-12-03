@@ -1,0 +1,27 @@
+//https://codeforces.com/problemset/problem/1132/B
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    int n;
+    cin >> n;
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+ 
+    sort(a.begin(), a.end()); 
+ 
+    long long total = 0;
+    for (int i = 0; i < n; i++) total += a[i];
+ 
+    int m;
+    cin >> m;
+    vector<int> q(m);
+    for (int i = 0; i < m; i++) cin >> q[i];
+ 
+    for (int i = 0; i < m; i++) {
+        long long min_cost = total - a[n - q[i]]; 
+        cout << min_cost << "\n";
+    }
+ 
+    return 0;
+}
