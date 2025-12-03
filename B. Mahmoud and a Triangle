@@ -1,0 +1,20 @@
+//https://codeforces.com/problemset/problem/766/B
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    sort(a.begin(), a.end());
+    bool canForm = false;
+    for (int i = 0; i + 2 < n; i++) {
+        if (a[i] + a[i + 1] > a[i + 2]) {
+            canForm = true;
+            break;
+        }
+    }
+    cout << (canForm ? "YES" : "NO") << endl;
+    return 0;
+}
