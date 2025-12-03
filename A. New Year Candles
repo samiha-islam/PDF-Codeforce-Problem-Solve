@@ -1,0 +1,20 @@
+//https://codeforces.com/problemset/problem/379/A
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    int hours=a;
+    int newCandles=a;
+
+    while(newCandles>=b) {
+        int extra=newCandles/b;
+        hours+=extra;
+        newCandles=extra+newCandles% b;
+    }
+
+    cout<<hours<<"\n";
+    return 0;
+}
