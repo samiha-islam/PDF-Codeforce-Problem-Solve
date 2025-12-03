@@ -1,0 +1,21 @@
+//https://codeforces.com/problemset/problem/1560/A
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int liked[1000], i=0;
+    for (int n=1;i<1000;n++) {
+        if (n%3!=0 && n%10!=3) {
+            liked[i++]=n;
+        }
+    }
+    int t;
+    cin>>t;
+    while(t--) {
+        int k;
+        cin>>k;
+        cout<< liked[k - 1]<<"\n";
+    }
+
+    return 0;
+}
